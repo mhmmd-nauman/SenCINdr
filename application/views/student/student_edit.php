@@ -1,0 +1,42 @@
+ <?php echo validation_errors(); ?>
+
+<?php echo form_open('student/save_student') ?>
+<table width="332" height="203" border="1" align="center">
+  <tr>
+    <td height="28" colspan="2"><div align="center">Student form Form</div></td>
+    </tr>
+  <tr>
+    <td width="102" height="29">name</td>
+    <td width="199"><label for="nm"></label>
+        <input type="text" name="nm" id="nm" value="<?php echo $std[0]->Emp_name;?>" /></td>
+  </tr>
+  <tr>
+    <td height="33">id</td>
+    <td><label for="fm"></label>
+      <input type="text" name="fm" id="fm" value="<?php echo $std[0]->Emp_father_name;?>" /></td>
+  </tr>
+  <tr>
+    <td height="34"><ucnic>class </u></td>
+    <td><label for="cnc"></label>
+      <input type="text" name="cnc" id="cnc" value="<?php echo $std[0]->Emp_cnic;?>" /></td>
+  </tr>
+  <tr>
+    <td height="32">session</td>
+    <td><label for="scale"></label>
+      <input type="text" name="scale" id="scale" value="<?php echo $std[0]->_session;?>" /></td>
+  </tr>
+  <tr>
+    <td>address</td>
+    <td><label for="post"></label>
+      <input type="text" name="post" id="post" value="<?php echo $std[0]->std_add;?>" /></td>
+  </tr>
+  <tr>
+  <td><input type="submit" name="sbtn" id="sbtn" value="Submit" /></td>          
+  <td><input type="submit" name="sbtn" id="sbtn" value="Submit" /></td>
+  </tr>
+</table>
+
+<input type="hidden" name="id" id="id" value="<?php echo $emp[0]->id;?>" />
+</form>
+</body>
+</html>
