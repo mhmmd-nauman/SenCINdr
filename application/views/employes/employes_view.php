@@ -1,21 +1,22 @@
-
+<div class="alert alert-danger">
  <?php echo validation_errors(); ?>
-
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
 <?php echo form_open('employes/create') ?>
-<table width="332" height="203" border="1" align="center">
-  <tr>
-    <td height="28" colspan="2"><div align="center">Employes Form</div></td>
-    </tr>
-  <tr>
-    <td width="102" height="29">Emp_name</td>
-    <td width="199"><label for="nm"></label>
-      <input type="text" name="nm" id="nm" /></td>
-  </tr>
-  <tr>
-    <td height="33">Emp_father_name</td>
-    <td><label for="fm"></label>
-      <input type="text" name="fm" id="fm" /></td>
-  </tr>
+<div class="form-group">
+    <label for="name">Employee Name</label>
+    <input type="text" class="form-control" name="empname" id="empname" 
+       placeholder="Enter Name">
+</div>
+<div class="form-group">
+    <label for="name">Father Name</label>
+    <input type="text" class="form-control" name="fathername" id="fathername" 
+       placeholder="Enter Name">
+</div>
+<table width="332" height="203" border="1" align="center" >
+  
   <tr>
     <td height="34"><u>Emp cnic</u></td>
     <td><label for="cnc"></label>
@@ -44,5 +45,8 @@
 
 
 </form>
+</div>
+<div class="col-md-3"></div>
+</div>
 </body>
 </html>

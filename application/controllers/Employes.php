@@ -39,13 +39,13 @@ class Employes extends CI_Controller
         
         public function create()
         {
-             $this->load->helper('form');
-                $this->load->library('form_validation');
+            $this->load->helper('form');
+            $this->load->library('form_validation');
 
                 $data['title'] = 'Create a employes item';
 
-                $this->form_validation->set_rules('nm', 'nm', 'required');
-                
+                $this->form_validation->set_rules('empname', 'Employee Name', 'required');
+                $this->form_validation->set_rules('fathername', 'Father Name', 'required');
                  if ($this->form_validation->run() === FALSE)
                  {
                       // echo " in if";
@@ -53,14 +53,14 @@ class Employes extends CI_Controller
                         $this->load->view('employes/employes_view');
                         $this->load->view('templates/footer');
                  }
- else
-                  {
+                else
+                {
      
       //echo " in else";
                         $this->employes_model->set_employes();
                         //$this->load->view('employes/employes_view');
                         redirect('employes/view_emp', 'location');
-                  }
+                }
         }
         
         public function edit_emp($id)
