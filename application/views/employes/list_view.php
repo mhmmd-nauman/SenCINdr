@@ -8,20 +8,22 @@
 
 <table  align="center" class="table table-hover table-striped">
   <tr>
-    <td >Emp Name</td>
-    <td >Emp Father Name</td>
-    <td ><u>Emp_cnic</u></td>
-    <td >Emp_scale</td>
-    <td >Emp_post</td>
-    <td >Emp_address</td>
+    <td >Emp Id</td>
+    <td >Emp Cnic</td>
+    <td ><u>Emp Name</u></td>
+ <td ><u>Emp Father Name</u></td>
+    <td >Emp Scale</td>
+    <td >Emp Post</td>
+    <td >Emp Address</td>
     <td >Action</td>
   </tr>
   <?php foreach ($employes as $emp_item): ?>
   
    <tr>
-    <td><?php echo $emp_item['Emp_name'] ?></td>
-     <td><?php echo $emp_item['Emp_father_name'] ?></td>
+    <td><?php echo $emp_item['id'] ?></td>
      <td><?php echo $emp_item['Emp_cnic'] ?></td>
+     <td><?php echo $emp_item['Emp_name'] ?></td>
+     <td><?php echo $emp_item['Emp_father_name'] ?></td>
      <td><?php echo $emp_item['Emp_scale'] ?></td>
      <td><?php echo $emp_item['Emp_post'] ?></td>
      <td><?php echo $emp_item['Emp_address'] ?></td>
