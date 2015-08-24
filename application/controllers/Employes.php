@@ -44,8 +44,13 @@ class Employes extends CI_Controller
 
                 $data['title'] = 'Create a employes item';
 
-                $this->form_validation->set_rules('empname', 'Employee Name', 'required');
-                $this->form_validation->set_rules('fathername', 'Father Name', 'required');
+                $this->form_validation->set_rules('empid', 'id', 'required');
+                $this->form_validation->set_rules('empcnc', 'Emp cnic', 'required');
+                 $this->form_validation->set_rules('empname', 'Emp Name', 'required');
+                  $this->form_validation->set_rules('empfather', 'Emp Father', 'required');
+                   $this->form_validation->set_rules('empscale', 'Emp Scale', 'required');
+                    $this->form_validation->set_rules('emppost', 'Emp Post', 'required');
+                     $this->form_validation->set_rules('empadd', 'Emp Address', 'required');
                  if ($this->form_validation->run() === FALSE)
                  {
                       // echo " in if";
@@ -99,9 +104,9 @@ class Employes extends CI_Controller
             $this->load->view('employes/list_view',$data);
             $this->load->view('templates/footer',$data);
         }
-        public function delete_emp($name)
+        public function delete_emp($id)
         {
-           $this->db->where('Emp_name', $name);
+           $this->db->where('id', $id);
            $this->db->delete('employes');
            $this->view_emp(); 
         }
@@ -109,14 +114,16 @@ class Employes extends CI_Controller
         {
             
             $data = array(
-                     'Emp_name' => $this->input->post('nm'),
+                    // 'id' => $this->input->post('empid'),
+                'Emp_cnic' => $this->input->post('empcnc'),
+                'Emp_name' => $this->input->post('empname'),
                      //'id' => $this->input->post('id'),
-                     'Emp_father_name' => $this->input->post('fm'),
-                     'Emp_scale' => $this->input->post('scale'),
-                    'Emp_post' => $this->input->post('post'),
+                     'Emp_father_name' => $this->input->post('empfather'),
+                     'Emp_scale' => $this->input->post('empscale'),
+                    'Emp_post' => $this->input->post('emppost'),
                     
                         //'slug' => $slug,
-                        'Emp_address' => $this->input->post('add')
+                        'Emp_address' => $this->input->post('empadd')
                 );
                 $this->db->where('id',$this->input->post('id'));
                 $this->db->update('employes',$data);
