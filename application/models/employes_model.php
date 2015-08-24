@@ -30,14 +30,16 @@ class employes_model extends CI_Model
                 $this->load->helper('url');
                 echo "come here";
                 $data = array(
-                     'Emp_name' => $this->input->post('nm'),
+                     'id' => $this->input->post('empid'),
+                     'Emp_cnic' => $this->input->post('empcnc'),
+                     'Emp_name' => $this->input->post('empname'),
                      //'id' => $this->input->post('id'),
-                     'Emp_father_name' => $this->input->post('fm'),
-                     'Emp_scale' => $this->input->post('scale'),
-                    'Emp_post' => $this->input->post('post'),
+                     'Emp_father_name' => $this->input->post('empfather'),
+                     'Emp_scale' => $this->input->post('empscale'),
+                    'Emp_post' => $this->input->post('emppost'),
                     
                         //'slug' => $slug,
-                        'Emp_address' => $this->input->post('add')
+                        'Emp_address' => $this->input->post('empadd')
                 );
 
                 return $this->db->insert('employes', $data);
