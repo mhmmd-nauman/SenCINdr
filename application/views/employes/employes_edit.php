@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <label for="name">Emp Father Name</label>
-    <input type="text" class="form-control" name="empfather" id="empfather" value="<?php $emp$std[0]->Emp_father_name;?>" 
+    <input type="text" class="form-control" name="empfather" id="empfather" value="<?php echo $emp[0]->Emp_father_name;?>" 
        placeholder="Enter Father Name">
 </div>
     <div class="form-group">
