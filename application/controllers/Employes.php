@@ -15,8 +15,8 @@ class Employes extends CI_Controller
 {
     public function __construct()
     {
-//put your code here
-      parent::__construct();
+        //put your code here
+        parent::__construct();
         $this->load->database();
         $this->load->model('employes_model');
         $this->load->library('form_validation');
@@ -25,12 +25,20 @@ class Employes extends CI_Controller
     public function index()
     {
         
-    $data['employes'] = $this->employes_model->get_employes();
+        $data['employes'] = $this->employes_model->get_employes();
+            
+            $this->load->view('templates/header', $data);
+            $this->load->view('employes/list_view',$data);
+            $this->load->view('templates/footer',$data);
+            /*
+            $data['employes'] = $this->employes_model->get_employes();
                 $data['title'] = 'employes archive';
 
                 $this->load->view('templates/header', $data);
                 $this->load->view('employes/employes_view', $data);
                 $this->load->view('templates/footer');
+             * 
+             */
 	}
         public function view($slug)
         {
@@ -44,7 +52,7 @@ class Employes extends CI_Controller
 
                 $data['title'] = 'Create a employes item';
 
-                $this->form_validation->set_rules('empid', 'id', 'required');
+                
                 $this->form_validation->set_rules('empcnc', 'Emp cnic', 'required');
                  $this->form_validation->set_rules('empname', 'Emp Name', 'required');
                   $this->form_validation->set_rules('empfather', 'Emp Father', 'required');
@@ -55,7 +63,7 @@ class Employes extends CI_Controller
                  {
                       // echo " in if";
                         $this->load->view('templates/header', $data);
-                        $this->load->view('employes/employes_view');
+                        $this->load->view('employes/employes_create');
                         $this->load->view('templates/footer');
                  }
                 else
@@ -114,7 +122,7 @@ class Employes extends CI_Controller
         {
             
             $data = array(
-                    'id' => $this->input->post('empid'),
+                   // 'id' => $this->input->post('empid'),
                 'Emp_cnic' => $this->input->post('empcnc'),
                 'Emp_name' => $this->input->post('empname'),
                      //'id' => $this->input->post('id'),

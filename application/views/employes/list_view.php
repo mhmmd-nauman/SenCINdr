@@ -1,10 +1,15 @@
 <div class="row" >
-<div class="col-md-2" ></div>
-<div class="col-md-8" >
+<div class="col-md-1" ></div>
+<div class="col-md-10" >
 
 <?php echo validation_errors(); ?>
-    <a class="btn btn-success" href ="<?php echo site_url("employes/create/");?>">Create Employee</a>
-    
+    <div class="row" >
+        <br>
+        <div class="col-md-12">
+            <a class="btn btn-success" href ="<?php echo site_url("employes/create/");?>">Create Employee</a>
+        </div>
+        <br>  <br>
+        </div>
 
 <table  align="center" class="table table-hover table-striped">
   <tr>
@@ -30,7 +35,7 @@
      <td><a class="btn btn-success" href ='<?php echo site_url("employes/edit_emp/".$emp_item['id']);?>'>Edit</a>|<a class="btn btn-default" href ='<?php echo site_url("employes/delete_emp/".$emp_item['Emp_name']);?>'>Delete</a></td>
   </tr>
  <?php endforeach ?>
-      
+</table>   
 </div>
-  <div class="col-md-2" ></div>
+  <div class="col-md-1" ></div>
 </div>

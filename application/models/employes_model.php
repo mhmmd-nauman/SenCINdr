@@ -28,9 +28,9 @@ class employes_model extends CI_Model
          public function set_employes()
         {
                 $this->load->helper('url');
-                echo "come here";
+                //echo "come here";
                 $data = array(
-                     'id' => $this->input->post('empid'),
+                     //'id' => $this->input->post('empid'),
                      'Emp_cnic' => $this->input->post('empcnc'),
                      'Emp_name' => $this->input->post('empname'),
                      //'id' => $this->input->post('id'),
