@@ -2,8 +2,8 @@
  <?php echo validation_errors(); ?>
 </div>
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-0">
 <?php echo form_open('employes/create') ?>
 <div class="form-group">
     <label for="name">Emp Id</label>
@@ -54,7 +54,7 @@
 
 </form>
 </div>
-<div class="col-md-3"></div>
+<div class="col-sm-3"></div>
 </div>
 </body>
 </html>

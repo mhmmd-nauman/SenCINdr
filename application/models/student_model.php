@@ -1,3 +1,5 @@
+
+
 <?php
 
 /*
@@ -7,47 +9,43 @@
  */
 
 /**
- * Description of student_model
+ * Description of Employes
  *
  * @author Nadir Malik
  */
-class student_model extends CI_model
+class student_model extends CI_Model
 {
-    public function __construct()
-	{
-		$this->load->database();
-	}
-        
-        
-             public function get_student($slug = FALSE)
+    public function  __construct()
+    {
+        $this->load->database();
+    }
+      public function get_student()
         {
-                if ($slug === FALSE)
-                {
-                        $query = $this->db->get('student');
-                        return $query->result_array();
                 
-                }
-                        
+            $query = $this->db->get('student');
+            return $query->result_array();
                 
                 
-             $query = $this->db->get_where('student', 'id','class','session','address',array('slug' => $slug));
-                return $query->row_array();
-        }
-        public function set_student()
+        } 
+         public function set_student()
         {
                 $this->load->helper('url');
-                echo "come here";
+                //echo "come here";
                 $data = array(
-                     'name' => $this->input->post('nm'),
+                     //'id' => $this->input->post('empid'),
+                     'name' => $this->input->post('stdname'),
+                     'Father_name' => $this->input->post('stdfather'),
                      //'id' => $this->input->post('id'),
-                     'class' => $this->input->post('clss'),
-                     'session' => $this->input->post('ssa'),
-                   
+                     'cnic' => $this->input->post('stdcnic'),
+                     'class' => $this->input->post('stdclass'),
+                    'session' => $this->input->post('stdsession'),
+                    
                         //'slug' => $slug,
-                        'address' => $this->input->post('ara')
+                        'address' => $this->input->post('stdaddress')
                 );
 
-                return $this->db->insert('student', $data);
+                 $this->db->insert('student', $data);
+              
         }
 }
 

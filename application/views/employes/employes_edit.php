@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-<?php echo form_open('employes/create') ?>
+<?php echo form_open('employes/update_emp') ?>
 
 <div class="form-group">
     <label for="name">Emp Cnic</label>
@@ -38,6 +38,7 @@
     placeholder="Enter Address">
     </div>
     
+        <input type="hidden" name="id" id="id" value="<?php echo $emp[0]->id;?>">
     
     
    

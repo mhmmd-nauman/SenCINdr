@@ -32,7 +32,7 @@
      <td><?php echo $emp_item['Emp_scale'] ?></td>
      <td><?php echo $emp_item['Emp_post'] ?></td>
      <td><?php echo $emp_item['Emp_address'] ?></td>
-     <td><a class="btn btn-success" href ='<?php echo site_url("employes/edit_emp/".$emp_item['id']);?>'>Edit</a>|<a class="btn btn-default" href ='<?php echo site_url("employes/delete_emp/".$emp_item['Emp_name']);?>'>Delete</a></td>
+     <td><a class="btn btn-success" href ='<?php echo site_url("employes/edit_emp/".$emp_item['id']);?>'>Edit</a>|<a class="btn btn-default" href ='<?php echo site_url("employes/delete_emp/".$emp_item['id']);?>'>Delete</a></td>
   </tr>
  <?php endforeach ?>
 </table>   

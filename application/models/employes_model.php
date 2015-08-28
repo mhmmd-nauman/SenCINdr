@@ -43,6 +43,7 @@ class employes_model extends CI_Model
                 );
 
                 return $this->db->insert('employes', $data);
+              
         }
 }
 

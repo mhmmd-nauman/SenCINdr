@@ -133,10 +133,27 @@ class Employes extends CI_Controller
                         //'slug' => $slug,
                         'Emp_address' => $this->input->post('empadd')
                 );
-                $this->db->where('id',$this->input->post('id'));
-                $this->db->update('employes',$data);
+               
+                $this->db->insert('employes',$data);
           
                         redirect('employes/view_emp', 'location');
         }  
-        
+        public function update_emp()
+        {
+            $data = array(
+                   // 'id' => $this->input->post('empid'),
+                'Emp_cnic' => $this->input->post('empcnc'),
+                'Emp_name' => $this->input->post('empname'),
+                     //'id' => $this->input->post('id'),
+                     'Emp_father_name' => $this->input->post('empfather'),
+                     'Emp_scale' => $this->input->post('empscale'),
+                    'Emp_post' => $this->input->post('emppost'),
+                    
+                        //'slug' => $slug,
+                        'Emp_address' => $this->input->post('empadd')
+                );
+             $this->db->where('id',$this->input->post('id'));
+             $this->db->update('employes', $data);
+            redirect('employes/view_emp', 'location');
+        }
 }
