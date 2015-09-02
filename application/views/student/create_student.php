@@ -9,13 +9,13 @@
 
 <div class="form-group">
       <label for="name">student name</label>
-    <input type="text" class="form-control" name="stdname" id="stdname" 
+    <input type="text" value="<?php echo set_value('stdname'); ?>" class="form-control" name="stdname" id="stdname"
        placeholder="Enter name">
    </div>  
         
 <div class="form-group">
       <label for="name">Father name</label>
-    <input type="text" class="form-control" name="stdfather" id="stdfather" 
+    <input type="text" value="<?php echo set_value('stdfather'); ?>" class="form-control" name="stdfather" id="stdfather" 
        placeholder="Enter father name">
    </div>         
 <div class="form-group">
