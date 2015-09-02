@@ -47,61 +47,51 @@ class Student extends CI_Controller
     {
         $this->load->helper('form');
         $this->load->library('form_validation');
-
         $data['title'] = 'Create a student item';
-
-                
-              $this->form_validation->set_rules('stdname', 'name', 'required');
-               // $this->form_validation->set_rules('stdname', 'stdname', 'required|min_length[5]|max_length[12]|is_unique[name.stdname]');
-$this->form_validation->set_rules('stdname', 'stdname', 'trim|required|min_length[5]|max_length[12]');
-               // $this->form_validation->set_rules('stdname', 'name', 'required');
-                 $this->form_validation->set_rules('stdfather', 'Father_name', 'required');
-                  $this->form_validation->set_rules('stdcnic', 'cnic', 'required|numeric',array('numeric' => 'Error Message: CNIC can only be digits.'));
-                  $this->form_validation->set_rules('stdclass', 'class', 'required');
-                    $this->form_validation->set_rules('stdsession', 'session', 'required');
-                    //$this->form_validation->set_rules('email', 'Email', 'required');
-             $this->form_validation->set_rules('stdaddress', 'address', 'required');
-    if ($this->form_validation->run() === false)
+        $this->form_validation->set_rules('stdname', 'name', 'required');
+        // $this->form_validation->set_rules('stdname', 'stdname', 'required|min_length[5]|max_length[12]|is_unique[name.stdname]');
+        $this->form_validation->set_rules('stdname', 'stdname', 'trim|required|min_length[5]|max_length[12]');
+        // $this->form_validation->set_rules('stdname', 'name', 'required');
+        $this->form_validation->set_rules('stdfather', 'Father_name', 'required');
+        $this->form_validation->set_rules('stdcnic', 'cnic', 'required|numeric',array('numeric' => 'Error Message: CNIC can only be digits.'));
+        $this->form_validation->set_rules('stdclass', 'class', 'required');
+        $this->form_validation->set_rules('stdsession', 'session', 'required');
+        //$this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('stdaddress', 'address', 'required');
+        if ($this->form_validation->run() === false)
         {
-                    // echo " in if";
-                        $this->load->view('templates/header', $data);
-                       $this->load->view('student/create_student');
-                        $this->load->view('templates/footer');
+            // echo " in if";
+            $this->load->view('templates/header', $data);
+            $this->load->view('student/create_student');
+            $this->load->view('templates/footer');
         }
-                else
+        else
         {
-     
-     //echo " in else";
-                        $this->student_model->set_student();
-                        //$this->load->view('student/create_student');
-                       redirect ('student/view_std', 'location');
+            //echo " in else";
+            $this->student_model->set_student();
+            //$this->load->view('student/create_student');
+            redirect ('student/view_std', 'location');
         }
          
         }
-          public function edit_std($id)
+        public function edit_std($id)
         {
             //$this->db->get('employes');
             //$query = $this->db->where('id', $id);
             //$data['emp'] = $query->result_array();
-            
             $this->db->select("*");
             $this->db->from('student');
             $this->db->where('id', $id);
             $query = $this->db->get();
             $data['std'] = $query->result();
-        
-            
             //print_r($data['emp']);
-                $this->load->helper('form');
-                $this->load->library('form_validation');
-
-                $data['title'] = 'Create a student item';
-
-               
-                $this->load->view('templates/header', $data);
-                $this->load->view('student/edit_student',$data);
-                $this->load->view('templates/footer',$data);
-                        //redirect('employes/view_emp', 'location');
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+            $data['title'] = 'Create a student item';
+            $this->load->view('templates/header', $data);
+            $this->load->view('student/edit_student',$data);
+            $this->load->view('templates/footer',$data);
+            //redirect('employes/view_emp', 'location');
                   
         }
         public function view_std()
@@ -111,32 +101,31 @@ $this->form_validation->set_rules('stdname', 'stdname', 'trim|required|min_lengt
             $this->load->view('templates/header', $data);
             $this->load->view('student/list_student',$data);
             $this->load->view('templates/footer',$data);
-       }
- public function delete_std($id)
+        }
+        public function delete_std($id)
         {
            $this->db->where('id', $id);
            $this->db->delete('student');
            $this->view_std(); 
         }
-         public function save_std()
+        public function save_std()
         {
             
             $data = array(
-                   // 'id' => $this->input->post('empid'),
+                // 'id' => $this->input->post('empid'),
                 'name' => $this->input->post('stdname'),
                 'Father_name' => $this->input->post('stdfather'),
-              //'id' => $this->input->post('id'),
+                //'id' => $this->input->post('id'),
                 'cnic' => $this->input->post('stdcnic'),
                 'class' => $this->input->post('stdclass'),
                 'session' => $this->input->post('stdsession'),
-                    
-              //'slug' => $slug,
+                //'slug' => $slug,
                 'address' => $this->input->post('stdaddress')
             );
                
-                $this->db->insert('student',$data);
+            $this->db->insert('student',$data);
           
-                        redirect('student/view_std', 'location');
+            redirect('student/view_std', 'location');
         }  
         public function update_std()
         {
